@@ -263,3 +263,53 @@ footer {
 .login-btn:hover {
     transform: translateY(-1px);
 }
+
+/* =============================
+   EXTRA UI POLISH (SAFE ADDON)
+   ============================= */
+
+/* Navbar */
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+}
+
+/* Dashboard cards hover */
+.dashboard-card {
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* Dashboard icons */
+.dashboard-card i {
+    font-size: 42px;
+}
+
+/* Footer polish */
+.footer {
+    background: #111;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Smooth table hover */
+.table-hover tbody tr:hover {
+    background-color: #f5f7fa;
+}
+
+/* Buttons polish */
+.btn {
+    border-radius: 8px;
+}
+
+/* Cards polish */
+.card {
+    border-radius: 14px;
+}

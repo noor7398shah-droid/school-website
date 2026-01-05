@@ -1,79 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="admin-bg">
+<h2 class="fw-bold mb-4">Admin Dashboard</h2>
 
-    <h2 class="mb-4">📊 School Dashboard</h2>
+<div class="row g-4">
 
-    <div class="row g-4">
-
-        <!-- STUDENTS -->
-        <div class="col-md-4">
-            <div class="card shadow-sm p-3">
-                <h5 class="text-center">Students by Class</h5>
-                <canvas id="studentsChart"></canvas>
+    <div class="col-md-4">
+        <div class="card dashboard-card shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-people-fill icon-blue"></i>
+                <h6 class="mt-2">Students</h6>
+                <h3>120</h3>
             </div>
         </div>
+    </div>
 
-        <!-- FEES -->
-        <div class="col-md-4">
-            <div class="card shadow-sm p-3">
-                <h5 class="text-center">Fees Status</h5>
-                <canvas id="feesChart"></canvas>
+    <div class="col-md-4">
+        <div class="card dashboard-card shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-person-badge-fill icon-green"></i>
+                <h6 class="mt-2">Teachers</h6>
+                <h3>18</h3>
             </div>
         </div>
+    </div>
 
-        <!-- ATTENDANCE -->
-        <div class="col-md-4">
-            <div class="card shadow-sm p-3">
-                <h5 class="text-center">Attendance</h5>
-                <canvas id="attendanceChart"></canvas>
+    <div class="col-md-4">
+        <div class="card dashboard-card shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-cash-stack icon-yellow"></i>
+                <h6 class="mt-2">Fees</h6>
+                <h3>₹45,000</h3>
             </div>
         </div>
-
     </div>
 
 </div>
-
-<!-- CHART JS -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-/* STUDENTS */
-new Chart(document.getElementById("studentsChart"), {
-    type: "bar",
-    data: {
-        labels: [{% for s in students %}"Class {{ s[0] }}",{% endfor %}],
-        datasets: [{
-            data: [{% for s in students %}{{ s[1] }},{% endfor %}],
-            backgroundColor: "#0d6efd"
-        }]
-    }
-});
-
-/* FEES */
-new Chart(document.getElementById("feesChart"), {
-    type: "pie",
-    data: {
-        labels: [{% for f in fees %}"{{ f[0] }}",{% endfor %}],
-        datasets: [{
-            data: [{% for f in fees %}{{ f[1] }},{% endfor %}],
-            backgroundColor: ["#198754", "#dc3545"]
-        }]
-    }
-});
-
-/* ATTENDANCE */
-new Chart(document.getElementById("attendanceChart"), {
-    type: "doughnut",
-    data: {
-        labels: ["Present", "Absent"],
-        datasets: [{
-            data: [{{ attendance.Present }}, {{ attendance.Absent }}],
-            backgroundColor: ["#0dcaf0", "#ffc107"]
-        }]
-    }
-});
-</script>
 
 {% endblock %}
