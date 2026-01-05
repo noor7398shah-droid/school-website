@@ -1,0 +1,265 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    ),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.hero .btn {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+/* FEATURE CARDS */
+.features {
+    margin-top: -60px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card h5 {
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.feature-icon {
+    font-size: 40px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 80px;
+    background: #212529;
+    color: #ccc;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+/* ================= ADMIN DASHBOARD ================= */
+
+.admin-bg {
+    background: linear-gradient(135deg, #eef2f7, #f8fafc);
+    padding: 40px 30px;
+    border-radius: 16px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.admin-header h2 {
+    font-weight: 800;
+    color: #222;
+}
+
+/* SEARCH BOX */
+.search-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+/* TABLE */
+.table {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.table thead {
+    background: #212529;
+    color: white;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+/* DASH BUTTONS */
+.admin-actions a {
+    margin-right: 10px;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+
+/* NAVBAR MENU FIX */
+.navbar-nav .nav-link {
+    color: #ddd !important;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+}
+
+/* Underline hover effect */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ffc107;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+/* ================= FEES PANEL ================= */
+
+.fees-bg {
+    background: linear-gradient(135deg, #eef2f7, #f8fafc);
+    padding: 40px 30px;
+    border-radius: 18px;
+}
+
+.fees-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.fees-header h2 {
+    font-weight: 800;
+    color: #222;
+}
+
+/* FEES TABLE CARD */
+.fees-table-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* STATUS BADGES */
+.status-paid {
+    background: #d1f7e3;
+    color: #13795b;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.status-due {
+    background: #fde2e2;
+    color: #b42318;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ADD FEES BUTTON */
+.add-fees-btn {
+    border-radius: 22px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.login-bg {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f2933, #111827);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+}
+
+.login-card {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 18px;
+}
+
+.login-card h2 {
+    color: #111827;
+}
+
+.login-card .form-control {
+    border-radius: 12px;
+    padding: 10px 14px;
+}
+
+.login-card .form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+.login-btn {
+    border-radius: 25px;
+    padding: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+}

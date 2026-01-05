@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="admin-bg">
+
+    <!-- HEADER -->
+    <div class="admin-header">
+        <h2>📊 Admin Dashboard</h2>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-card">
+        <form method="post" class="row g-2 align-items-center">
+            <div class="col-md-4">
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="🔍 Search by Name"
+                    value="{{ search_name }}"
+                >
+            </div>
+
+            <div class="col-md-4">
+                <input
+                    type="text"
+                    name="class"
+                    class="form-control"
+                    placeholder="🎓 Search by Class"
+                    value="{{ search_class }}"
+                >
+            </div>
+
+            <div class="col-md-4">
+                <button class="btn btn-primary">Search</button>
+                <a href="/admin" class="btn btn-secondary">Reset</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- TABLE -->
+    {% if students|length == 0 %}
+        <div class="alert alert-warning">No students found</div>
+    {% else %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in students %}
+                <tr>
+                    <td>{{ s[0] }}</td>
+                    <td>{{ s[1] }}</td>
+                    <td>{{ s[2] }}</td>
+                    <td>{{ s[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <!-- QUICK ACTIONS -->
+    <div class="admin-actions mt-4">
+        <a href="/teachers" class="btn btn-primary">👩‍🏫 Teachers</a>
+        <a href="/attendance" class="btn btn-warning">📝 Attendance</a>
+        <a href="/fees" class="btn btn-success">💰 Fees</a>
+    </div>
+
+</div>
+
+{% endblock %}

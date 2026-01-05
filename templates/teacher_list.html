@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-between">
+    <h2>Teachers</h2>
+    <a href="/teacher/add" class="btn btn-primary">+ Add Teacher</a>
+</div>
+
+<table class="table table-bordered mt-3">
+    <tr class="table-dark">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+    {% for t in teachers %}
+    <tr>
+        <td>{{ t[0] }}</td>
+        <td>{{ t[1] }}</td>
+        <td>{{ t[2] }}</td>
+        <td>{{ t[3] }}</td>
+        <td>
+            <a href="/teacher/delete/{{ t[0] }}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

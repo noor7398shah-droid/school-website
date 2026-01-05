@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Mark Attendance ({{ today }})</h2>
+
+<form method="post">
+<table class="table table-bordered">
+    <tr class="table-dark">
+        <th>Name</th>
+        <th>Class</th>
+        <th>Status</th>
+    </tr>
+    {% for s in students %}
+    <tr>
+        <td>{{ s[1] }}</td>
+        <td>{{ s[2] }}</td>
+        <td>
+            <select name="student_{{ s[0] }}" class="form-select">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<button class="btn btn-success">Save Attendance</button>
+</form>
+
+{% endblock %}
